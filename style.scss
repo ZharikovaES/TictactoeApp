@@ -1,0 +1,126 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(18, 68, 18);
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.822);
+}
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.header {
+    padding: 30px 0;
+    &__info {
+        display: flex;
+        justify-content: space-around;
+        @media(max-width: 600px){
+            flex-wrap: wrap;
+        }
+    }
+    &__info-item {
+        display: flex;
+        @media(max-width: 600px){
+            flex: 1 0 auto;
+            padding: 10px;
+            justify-content: space-around;
+        }
+        span {
+            margin-right: 20px;
+        }
+    }
+}
+#player{
+    
+}
+
+#score{
+
+}
+
+#tictactoe {
+    margin: 0 auto;
+    width: 700px;
+    display: block;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    background-color: rgba(255, 255, 255, 0.822);
+    position: relative;
+    @media(max-width: 700px){
+        width: 300px;
+        grid-gap: 9px;
+    }
+}
+.tictactoe {
+    &__cell {
+        background-color: rgb(18, 68, 18);
+        cursor: pointer;
+    }
+    &-line{
+        display: none;
+        z-index: 2;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.822);
+        height: 35px;
+        border-radius: 20px;
+    }
+}
+.tictactoe-cross {
+    position: relative;
+
+    &::before,
+    &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: #aae2f8;
+        top: 50%;
+        left: 50%;
+        border-radius: 20px;
+        width: 250px;
+        height: 20px;
+
+        @media(max-width: 600px){
+            width: 100px;
+            height: 10px;
+        }
+    }
+    &::before{
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    &::after{
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+}
+.tictactoe-zero {
+    position: relative;
+
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 85%;
+        height: 85%;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        border: 20px solid #f7f8aa;
+        @media(max-width: 600px){
+            border: 10px solid #f7f8aa;
+        }
+    }
+
+}
